@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materiais de Futebol</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .product {
+            margin-bottom: 40px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        button {
+            display: block;
+            margin: 10px 0;
+        }
+        .message {
+            display: none;
+            margin: 20px 0;
+            padding: 10px;
+            border: 1px solid #ff5454;
+            background-color: #f9f9f9;
+        }
+        .form-section {
+            margin-top: 20px;
+        }
+        .form-section p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Materiais de Futebol</h1>
+    <p>Seja Bem-Vindo aos materiais de futebol!</p>
+    <p>Aqui temos várias opções como: tênis, bola de futebol, camisas.</p>
+
+    <div class="product">
+        <img src="/imgs/bola-futebol.jpg" alt="bola de futebol">
+        <p>Essa bola de futebol é ideal para treinos e jogos. Feita com material de alta qualidade.</p>
+        <p>Preço: R$ 25,00</p>
+        <button onclick="showMessage('bola')">Comprar</button>
+    </div>
+
+    <div class="product">
+        <img src="/imgs/D_NQ_NP_827785-MLB74986545378_032024-O.webp" alt="tênis">
+        <p>Este tênis é confortável e perfeito para atividades esportivas e treino.</p>
+        <p>Preço: R$ 45,00</p>
+        <button onclick="showMessage('tenis')">Comprar</button>
+    </div>
+
+    <div class="product">
+        <img src="/imgs/camisa_de_futebol_avante_76_1_20201213220409.webp" alt="camisa de futebol">
+        <p>Camisa de futebol oficial, ideal para torcedores e jogadores.</p>
+        <p>Preço: R$ 75,00</p>
+        <button onclick="showMessage('camisa')">Comprar</button>
+    </div>
+
+    <div id="message" class="message">
+        <p id="product-name"></p>
+        <div class="form-section">
+            <p>Por favor, insira seus dados para efetuar o pagamento:</p>
+            <form id="purchase-form" onsubmit="handleSubmit(event)">
+                <label for="name">Nome:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="address">Endereço:</label><br>
+                <input type="text" id="address" name="address" required><br><br>
+                <label for="payment">Número do Cartão:</label><br>
+                <input type="text" id="payment" name="payment" required><br><br>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+        <p id="order-status"></p>
+    </div>
+
+    <script>
+        function showMessage(product) {
+            const messageDiv = document.getElementById('message');
+            const productName = document.getElementById('product-name');
+            const orderStatus = document.getElementById('order-status');
+            
+            // Set the product name in the message
+            switch (product) {
+                case 'bola':
+                    productName.innerText = 'Você escolheu a Bola de Futebol.';
+                    break;
+                case 'tenis':
+                    productName.innerText = 'Você escolheu o Tênis.';
+                    break;
+                case 'camisa':
+                    productName.innerText = 'Você escolheu a Camisa de Futebol.';
+                    break;
+                default:
+                    productName.innerText = 'Produto desconhecido.';
+                    break;
+            }
+
+            messageDiv.style.display = 'block';
+            orderStatus.innerText = ''; // Clear previous status
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent form submission
+            const orderStatus = document.getElementById('order-status');
+            orderStatus.innerHTML = '<p>Pagamento realizado. Encomenda sendo enviada.</p>';
+        }
+    </script>
+</body>
+</html>
