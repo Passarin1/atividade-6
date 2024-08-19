@@ -11,7 +11,7 @@
             padding: 0;
             background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/imgs/61485ba4-0c4c-11ed-bc6b-3ba8471ccc07.fab2dc98.630x354o.4f16386cf563.png') no-repeat center center fixed;
             background-size: cover;
-            color: #fff;
+            color: #ffffff;
         }
 
         .header {
@@ -28,7 +28,7 @@
 
         .container {
             max-width: 800px;
-            margin: 0 auto;
+            margin: 20px auto;
             padding: 20px;
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
@@ -53,7 +53,7 @@
 
         .product button {
             display: block;
-            margin: 10px 0;
+            margin: 10px auto;
             padding: 10px 20px;
             background-color: #f5a623;
             color: #000;
@@ -70,11 +70,13 @@
 
         .message {
             display: none;
-            margin: 20px 0;
+            margin: 20px auto;
             padding: 20px;
             border: 1px solid #c4fab7;
-            background-color: #f9f9f9;
+            background-color: #000000;
             border-radius: 5px;
+            max-width: 600px;
+            text-align: left;
         }
 
         .form-section p {
@@ -82,7 +84,7 @@
         }
 
         .form-section input {
-            width: 100%;
+            width: calc(100% - 22px);
             padding: 10px;
             margin-bottom: 10px;
             border: 1px solid #ccc;
@@ -159,7 +161,44 @@
             </div>
         </div>
     </div>
-</body>
 
+    <script>
+        function showMessage(product) {
+            const messageDiv = document.getElementById('message');
+            const productName = document.getElementById('product-name');
+            
+            // Set the product name in the message
+            switch (product) {
+                case 'tabuleiro':
+                    productName.innerText = 'Você escolheu o Tabuleiro de Xadrez.';
+                    break;
+                case 'pecas':
+                    productName.innerText = 'Você escolheu as Peças de Xadrez.';
+                    break;
+                case 'relogio':
+                    productName.innerText = 'Você escolheu o Relógio de Xadrez.';
+                    break;
+                default:
+                    productName.innerText = 'Produto desconhecido.';
+                    break;
+            }
+
+            messageDiv.style.display = 'block'; // Show the message div
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent form submission
+            const orderStatus = document.getElementById('order-status');
+            if (!orderStatus) {
+                // Create the order status element if it does not exist
+                const statusDiv = document.createElement('div');
+                statusDiv.id = 'order-status';
+                statusDiv.innerHTML = '<p>Pagamento realizado. Encomenda sendo enviada.</p>';
+                document.getElementById('message').appendChild(statusDiv);
+            } else {
+                orderStatus.innerHTML = '<p>Pagamento realizado. Encomenda sendo enviada.</p>';
+            }
+        }
+    </script>
+</body>
 </html>
-/

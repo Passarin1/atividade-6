@@ -1,188 +1,195 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Materiais de karate - Mundo Esportivo</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-                background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/imgs/conjunto-de-silhueta-de-karate-de-design-plano_23-2150720311.avif') no-repeat center center fixed;
-                background-size: cover;
-                color: #fff;
-            }
-    
-            .header {
-                text-align: center;
-                padding: 50px 0;
-                background-color: rgba(0, 0, 0, 0.8);
-            }
-    
-            .header h1 {
-                margin: 0;
-                font-size: 3rem;
-                color: #f5a623;
-            }
-    
-            .container {
-                max-width: 800px;
-                margin: 0 auto;
-                padding: 20px;
-                background-color: rgba(255, 255, 255, 0.1);
-                border-radius: 10px;
-                box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            }
-    
-            .product {
-                margin-bottom: 40px;
-            }
-    
-            .product img {
-                max-width: 100%;
-                height: auto;
-                width: 400px;
-                border-radius: 10px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            }
-    
-            .product p {
-                font-size: 1.2rem;
-                color: #f0f0f0;
-                width: 800px;
-            }
-    
-            .product button {
-                display: block;
-                margin: 10px 0;
-                padding: 10px 20px;
-                background-color: #f5a623;
-                color: #000;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-                font-size: 1rem;
-                transition: background-color 0.3s;
-            }
-    
-            .product button:hover {
-                background-color: #e5941c;
-            }
-    
-            .message {
-                display: none;
-                margin: 20px 0;
-                padding: 20px;
-                border: 1px solid #c4fab7;
-                background-color: #f9f9f9;
-                border-radius: 5px;
-            }
-    
-            .form-section p {
-                margin-bottom: 10px;
-            }
-    
-            .form-section input {
-                width: 100%;
-                padding: 10px;
-                margin-bottom: 10px;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-            }
-    
-            .form-section button {
-                padding: 10px 20px;
-                background-color: #f5a623;
-                color: #000;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-                font-size: 1rem;
-                transition: background-color 0.3s;
-            }
-    
-            .form-section button:hover {
-                background-color: #e5941c;
-            }
-        </style>
-    </head>
-    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materiais de Karatê - Mundo Esportivo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/imgs/conjunto-de-silhueta-de-karate-de-design-plano_23-2150720311.avif') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            padding: 2px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .header {
+            padding: 20px 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1rem;
+            color: #f5a623;
+        }
+
+        .product {
+            margin-bottom: 40px;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            max-height: 110px; /* Ajuste para não ocupar muito espaço verticalmente */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .product p {
+            font-size: 1rem;
+            color: #f0f0f0;
+            margin: 10px 0;
+        }
+
+        .product button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            background-color: #f5a623;
+            color: #000;
+            border: none;
+            border-radius: 1px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .product button:hover {
+            background-color: #e5941c;
+        }
+
+        .form-section {
+            display: none; /* Oculta o formulário até que um botão de compra seja clicado */
+            margin-top: 20px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+        }
+
+        .form-section p {
+            margin-bottom: 10px;
+        }
+
+        .form-section input {
+            width: calc(80% - 22px); /* Ajuste para padding e borda */
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 1px;
+        }
+
+        .form-section button {
+            padding: 10px 10px;
+            background-color: #f5a623;
+            color: #000;
+            border: none;
+            border-radius: 1px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .form-section button:hover {
+            background-color: #e5941c;
+        }
+    </style>
+</head>
 <body>
-   <h1>Materiais de Karatê</h1>
-    <p>Seja Bem-Vindo à nossa loja de materiais de karatê!</p>
-    <p>Aqui temos várias opções como: faixa, kimono, equipamentos de treino.</p>
+    <div class="container">
+        <div class="header">
+            <h1>Materiais de Karatê</h1>
+        </div>
 
-    <div class="product">
-        <img src="/imgs/faixa-especial-amarela-karate-bordada-karate-do-em-japones.webp" alt="faixa de karatê">
-        <p>Faixa de karatê de cor amarela, ideal para todos os níveis de praticantes.</p>
-        <p>Preço: R$ 20,00</p>
-        <button onclick="showMessage('faixa')">Comprar</button>
-    </div>
+        <p>Seja Bem-Vindo à nossa loja de materiais de karatê!</p>
+        <p>Aqui temos várias opções como: faixa, kimono, equipamentos de treino.</p>
 
-    <div class="product">
-        <img src="/imgs/kimono_karate_adidas_club_com_selo_wkf_w220c_branco_4861_1_5a2a618dce73b29ce4151772cc551a7c.webp" alt="kimono de karatê">
-        <p>Kimono de karatê feito com material resistente e confortável, disponível em vários tamanhos.</p>
-        <p>Preço: R$ 150,00</p>
-        <button onclick="showMessage('kimono')">Comprar</button>
-    </div>
+        <div class="product">
+            <img src="/imgs/kimono_karate_adidas_club_com_selo_wkf_w220c_branco_4861_1_5a2a618dce73b29ce4151772cc551a7c.webp" alt="Kimono de Karatê">
+            <p>Kimono de karatê feito com material resistente e confortável, disponível em vários tamanhos.</p>
+            <p>Preço: R$ 150,00</p>
+            <button onclick="showForm('kimono')">Comprar</button>
+        </div>
 
-    <div class="product">
-        <img src="/imgs/4a4e5f9b79.webp" alt="equipamentos de treino de karatê">
-        <p>Equipamentos de treino para karatê, incluindo luvas, protetores e mais.</p>
-        <p>Preço: R$ 100,00</p>
-        <button onclick="showMessage('equipamento')">Comprar</button>
-    </div>
+        <div class="product">
+            <img src="/imgs/4a4e5f9b79.webp" alt="Equipamentos de Treino de Karatê">
+            <p>Equipamentos de treino para karatê, incluindo luvas, protetores e mais.</p>
+            <p>Preço: R$ 100,00</p>
+            <button onclick="showForm('equipamento')">Comprar</button>
+        </div>
 
-    <div id="message" class="message">
-        <p id="product-name"></p>
-        <div class="form-section">
+        <div class="product">
+            <img src="/imgs/faixa-especial-amarela-karate-bordada-karate-do-em-japones.webp" alt="Faixa de Karatê">
+            <p>Faixa de karatê de cor amarela, ideal para todos os níveis de praticantes.</p>
+            <p>Preço: R$ 20,00</p>
+            <button onclick="showForm('faixa')">Comprar</button>
+        </div>
+
+        <div id="form-section" class="form-section">
+            <p id="product-info"></p>
             <p>Por favor, insira seus dados para efetuar o pagamento:</p>
             <form id="purchase-form" onsubmit="handleSubmit(event)">
                 <label for="name">Nome:</label><br>
                 <input type="text" id="name" name="name" required><br><br>
+
                 <label for="email">Email:</label><br>
                 <input type="email" id="email" name="email" required><br><br>
+
                 <label for="address">Endereço:</label><br>
                 <input type="text" id="address" name="address" required><br><br>
+
                 <label for="payment">Número do Cartão:</label><br>
                 <input type="text" id="payment" name="payment" required><br><br>
+
                 <button type="submit">Enviar</button>
             </form>
         </div>
-        <p id="order-status"></p>
     </div>
 
     <script>
-        function showMessage(product) {
-            const messageDiv = document.getElementById('message');
-            const productName = document.getElementById('product-name');
-            const orderStatus = document.getElementById('order-status');
+        function showForm(product) {
+            const formSection = document.getElementById('form-section');
+            const productInfo = document.getElementById('product-info');
             
-            // Set the product name in the message
+            let productText;
             switch (product) {
                 case 'faixa':
-                    productName.innerText = 'Você escolheu a Faixa de Karatê.';
+                    productText = 'Você escolheu a Faixa de Karatê.';
                     break;
                 case 'kimono':
-                    productName.innerText = 'Você escolheu o Kimono de Karatê.';
+                    productText = 'Você escolheu o Kimono de Karatê.';
                     break;
                 case 'equipamento':
-                    productName.innerText = 'Você escolheu os Equipamentos de Treino de Karatê.';
+                    productText = 'Você escolheu os Equipamentos de Treino de Karatê.';
                     break;
                 default:
-                    productName.innerText = 'Produto desconhecido.';
-                    break;
+                    productText = 'Produto não encontrado.';
             }
 
-            messageDiv.style.display = 'block';
-            orderStatus.innerText = ''; // Clear previous status
+            productInfo.innerText = productText;
+            formSection.style.display = 'block'; // Exibe o formulário
         }
 
         function handleSubmit(event) {
-            event.preventDefault(); // Prevent form submission
-            const orderStatus = document.getElementById('order-status');
-            orderStatus.innerHTML = '<p>Pagamento realizado. Encomenda sendo enviada.</p>';
+            event.preventDefault();
+            alert('Pagamento realizado. Encomenda sendo enviada.');
+            document.getElementById('form-section').style.display = 'none'; // Oculta o formulário após o envio
         }
     </script>
 </body>

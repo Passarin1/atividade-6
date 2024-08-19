@@ -125,5 +125,16 @@ nav ul li a:hover {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
+.message {
+    display: none;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #000000;
+    background-color: #050505;
+    border-radius: 5px;
+    max-width: 600px;
+    text-align: left;
+    z-index: 10; /* Ensure it's on top */
+}
 
 
